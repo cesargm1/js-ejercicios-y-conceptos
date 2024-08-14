@@ -45,7 +45,7 @@ Un <p>, que contiene el texto del artículo.`
 
 ### Veamos este ejemplo de forma mas grafica
 
-![dom tree](/public/img/dom/dom_tree.png)
+![dom tree](/public/dom/img/dom_tree.png)
 
 En javascript cuando hablamos de DOM nos referimos a esta estrictura de arbol.
 
@@ -176,9 +176,9 @@ console.log(element);
 
 ### Resultado
 
-![getElementById](/public/img/dom/getElementById.png)
+![getElementById](/public/dom/img/getElementById.png)
 
-Como podemos obserbar en la imagen de abajo sale nuestro elemento **h1** por consola
+Como podemos observar en la imagen de abajo sale nuestro elemento **h1** por consola
 
 ##### getElementsByClassName
 
@@ -244,7 +244,7 @@ Aqui lo unico que hemos cambiado a sido el metodo del DOM que ahora es **getElem
 
 #### Resultado
 
-![getElementByClassName](/public/img/dom/getElementByClassName.png)
+![getElementByClassName](/public/dom/img/getElementByClassName.png)
 
 Al final como podemos ver en la imagen devuelve un array con todos los elementos que tengan la clase **section\_\_paragraf** y hasta nos debuelve su tamaño
 
@@ -258,7 +258,7 @@ console.log(element[0]);
 
 En este ejemplo cogemos el primer elemnento del array
 
-![getElementByClassName one](/public/img/dom/getElementByClassNameOne.png)
+![getElementByClassName one](/public/dom/img/getElementByClassNameOne.png)
 
 ### getElementsByTagName(tag)
 
@@ -318,6 +318,96 @@ console.log(element);
 
 El metodo **getElementsByTagName('etiqueta')** devuelve un array con las etiquetas que coincidan
 
-![getElementsByTagName](/public/img/dom/getElementByTagName.png)
+![getElementsByTagName](/public/dom/img/getElementByTagName.png)
 
 Como podemos ver en este ejemplo nos devuelve un array con las etiquetas que indiquemos
+
+### Metodos modernos
+
+#### querySelector()
+
+**sintaxis**
+
+querySelector("selector de css")
+
+Este motodo nos coje un selector css que coincida con la clase o el elemento inidicado
+
+```js
+const element = document.querySelector(".section__paragraf");
+
+console.log(element);
+```
+
+Nos devuelve el primer un elemento que coincide con ese selector si no existe devuelve null los demas elemntos que tengan ese mismo selector los ignora ya que solo coge el primero que coincide esto es mucho mas potente que **getElementById** ya que no solo buscamos por id si no por el elemento css
+
+#### Resultado
+
+![querySelector](/public/dom/img/querySelector.png)
+
+Como vemos nos devuelve el primer elemento que coincide con el selector
+
+#### querySelectorAll()
+
+Es muy parecido al anterior la diferencia que hay entre estos 2 es que mientras que **querySelector()** solo seleciona el primer selector que encuentre **querySelectorAll()** seleciona todos los selectores que coincidan con el elemento indicado
+
+#### Ejemplo
+
+```js
+const element = document.querySelectorAll("section");
+
+console.log(element);
+```
+
+seleciona todos los elementos que tengan la etiqueta section y nos devuelve algo parecido a un array
+podemos coger etiquetas clases id selectores css tanto en **querySelector()** como **querySelectorAll()**
+
+#### Resultado
+
+![querySelectorAll](/public/dom/img/querySelectorAll.png)
+
+En todos los ejemplos usamos este codigo **HTML**.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Usando el DOM</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<h1 id="dom">titulo</h1>
+		<section>
+			<article>
+				<h2>titulo del articulo</h2>
+				<p class="section__paragraf">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+					nisi hic tenetur labore, eos quia, omnis temporibus pariatur neque
+					exercitationem quam cum fugit, suscipit possimus! Deleniti accusantium
+					blanditiis dolorum quibusdam! Voluptate consequuntur sequi quae error
+					ut quasi aliquid! Et placeat cumque offici a quaerat. Repudiandae enim
+					corporis unde, dolorum voluptatibus autem expedita ipsum harum quaerat
+					nulla ad maxime eos alias aliquid?
+				</p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>titulo del articulo</h2>
+				<p class="section__paragraf">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+					nisi hic tenetur labore, eos quia, omnis temporibus pariatur neque
+					exercitationem quam cum fugit, suscipit possimus! Deleniti accusantium
+					blanditiis dolorum quibusdam! Voluptate consequuntur sequi quae error
+					ut quasi aliquid! Et placeat cumque offici a quaerat. Repudiandae enim
+					corporis unde, dolorum voluptatibus autem expedita ipsum harum quaerat
+					nulla ad maxime eos alias aliquid?
+				</p>
+			</article>
+		</section>
+		<script src="dom.js"></script>
+	</body>
+</html>
+```

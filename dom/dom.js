@@ -1,3 +1,3 @@
-const element = document.getElementsByTagName("section");
+const element = document.querySelectorAll("section");
 
 console.log(element);
