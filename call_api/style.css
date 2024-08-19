@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh
+}
+.gallery{
+max-width: 800px;
+width: 100%;
+display: grid;
+grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+gap: 2em;                                           
+}
+
+article{
+    background: -webkit-linear-gradient(114deg, #42b1c8,#9d8dcf,#13132a);/* Chrome 10-25, Safari 5.1-6 */                     
+     background: linear-gradient(114deg, #42b1c8,#9d8dcf,#13132a);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
+    padding: 1em;
+    display: flex;
+}
+
+h2{
+    width: 100%;
+    text-align: center;
+}

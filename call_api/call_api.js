@@ -1,10 +1,13 @@
+
 const callApi = async () => {
 
     // try dentro de el esta  codigo que puede dar un error 
     try {
 
         // hace una peticion http con fetch 
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
+        
+        // Importante a la Url que hacemos fetch podemos decirle cuantos pokemon queremos con el parametro limmit = 151 en este caso sacara los primeros 151 pokemos
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=721')
         console.log(response)
 
         // Me saca la respuesta en formato json con  const data = await response.json()
@@ -21,7 +24,15 @@ const callApi = async () => {
         // Mirar el metodo map y porque no funciona con foreach
 
          data.results.map(pokemon => {
-            console.log(pokemon.name,pokemon.url)
+            const section = document.querySelector("section")
+            const article = document.createElement("article")
+            const  h2 = document.createElement("h2")
+             const pokemonInformation = console.log(pokemon.name,pokemon.url)
+             
+             h2.textContent = (pokemon.name)
+             section.appendChild(article)
+             article.appendChild(h2)
+             console.log(pokemonInformation)
         })
 
         // Captura el error del try si ocurre uno y imprime el error por consola
@@ -32,3 +43,7 @@ const callApi = async () => {
     }
 
 callApi()
+
+
+
+// apenchid inserta un elemento html desde javascript como hijo  section.appendChild(article) en este ejemplo dentro de section habra un article
