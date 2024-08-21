@@ -1,18 +1,18 @@
-# Llamadas a una api por javascript
+# Llamadas a una API por JavaScript
 
-Para entemder por javascript como llamar a una API tenemos que tener antes unos conceptos claros
+Para entender por JavaScript cómo llamar a una API, tenemos que tener antes unos conceptos claros.
 
-- Que es la asincronia ?
-- Que son las promesas en javascript?
+- ¿Qué es la asincronía?
+- ¿Qué son las promesas en JavaScript?
 - async await
 
-Empezemos por la asincronia
+Empecemos por la asincronía.
 
-## Que es la asincronia ?
+## ¿Qué es la asincronía?
 
-La **asincronia es uno de los conceptos clave de javascript** cuando nosotros empezamos a programar lo hacemos de forma **sincrona** sincrona significa que el codigo se ejecuta de arriba abajo
+La **asincronía es uno de los conceptos clave de JavaScript**. Cuando nosotros empezamos a programar, lo hacemos de forma **síncrona.** Síncrona significa que el código se ejecuta de arriba a abajo.
 
-### Veamos un ejemplo de codigo sincrono
+### Veamos un ejemplo de código síncrono.
 
 ```js
 console.log("codigo sincrono"); // Este console log se ejecuta el 1
@@ -22,15 +22,15 @@ console.log("3"); // Este console log se ejecuta el ultimo
 
 ### Resultado
 
-![codigo sincrono](/public/api_img/codigo-sincrono.png)
+![Código síncrono.](/public/api_img/codigo-sincrono.png)
 
-Pero llegara un momento en nuestra aplicacion que queramos ejecutar tareas **asincronas** donde tenemos que **esperar a que ocurra un succeso** como por ejemplo un click una llamada a una API que no depemde de nosotros y luego cuando ocurra ese suceso realizar uma accion concreta por ejemplo hacer un fetch a una URL.
+Pero llegará un momento en nuestra aplicación que queramos ejecutar tareas **asíncronas** donde tenemos que **esperar a que ocurra un suceso** como por ejemplo un click una llamada a una API que no depende de nosotros y luego cuando ocurra ese suceso realizar uma acción concreta por ejemplo hacer un fetch a una URL.
 
-### Lenguaje no bloqueante
+### Lenguaje no bloqueante.
 
-Javascript es un lenguaje no bloqueante con esto a lo que nos referimos es que las tareas no se quedan bloqueadas permitiendo a javascript seguir ejecutando sus tareas
+JavaScript es un lenguaje no bloqueante, con esto a lo que nos referimos es que las tareas no se quedan bloqueadas, permitiendo a JavaScript seguir ejecutando sus tareas.
 
-#### Vamos a poner un ejemplo de codigo bloqueante
+#### Vamos a poner un ejemplo de código bloqueante.
 
 Vamos a partir del ejemplo anterior de console.log
 
@@ -40,72 +40,72 @@ console.log("uno detras de otro");
 console.log("3");
 ```
 
-Imagina que el primer console log depende de un factor por ejemplo el click de un boton si javscript fuera un lenguaje bloqueante si nosotros no pulsamos el boton el primer console.log no se ejecutara pero tampoco el segundo y el tercer console.log
+Imagina que el primer console.log depende de un factor, por ejemplo: el click de un botón. Si JavaScript fuera un lenguaje bloqueante, si nosotros no pulsamos el botón, el primer console.log no se ejecutará, pero tampoco el segundo y el tercer console.log
 
-### Que hace javascript para no bloquearse
+### ¿Qué hace JavaScript para no bloquearse?
 
-Javacript al ser un lenguaje no bloqueante lo que hara es mover esa esa tarea a una **lista de tareas pendientes** a esta tarea javascript le hara caso cuando haga falta en este ejemplo seia al pulsar el boton permitiendo al segundo y tercer console.log ejecutarse
+JavaScript, al ser un lenguaje no bloqueante, lo que hará es mover esa tarea a una **lista de tareas pendientes**. Esta tarea JavaScript le hará caso cuando haga falta. En este ejemplo sería al pulsar el botón, permitiendo al segundo y tercer console.log ejecutarse.
 
-Pueden existir múltiples tareas asíncronas, dichas tareas puede que terminen realizandose correctamente (o puede que no) y ciertas tareas pueden depender de otras, por lo que deben respetar un cierto orden. Además, es muy habitual que no sepamos previamente cuanto tiempo va a tardar en terminar una tarea, por lo que necesitamos un mecanismo para controlar todos estos factores: las promesas.
+Pueden existir múltiples tareas asíncronas, dichas tareas puede que terminen realizándose correctamente (o puede que no) y ciertas tareas pueden depender de otras, por lo que deben respetar un cierto orden. Además, es muy habitual que **no sepamos previamente cuánto tiempo va a tardar en terminar una tarea**, por lo que necesitamos un mecanismo para controlar todos estos factores: las promesas.
 
-### Algunos ejemplos de asincronia
+### Algunos ejemplos de asincronía.
 
-- Un fetch() a una URL para obtener un JSON
-- un setTimeOut() para un reloj
+- Un fetch() a una URL para obtener un JSON.
+- un setTimeOut() para que pase el tiempo en un reloj.
 
-Esto se hace metiante tareas asincronas ya que podria bloquear nuestro programa tambien influye la belocidad a internet que tengamos
+Esto se hace mediante tareas asíncronas, ya que si lo hacemos con tareas síncronas, podría bloquear nuestro programa. También influye la velocidad a internet que tengamos, porque la respuesta podría tardar más tiempo.
 
-### Gestionar la asincronia
+### Gestionar la asincronía.
 
-Podemos hacerlo de estas 3 maneras
+Podemos hacerlo de estas 3 maneras.
 
-- Funciones calback sun funciones que se llaman dentro de otras como parametro.
+- Las funciones calback son funciones que se llaman dentro de otras como parámetro.
 
 - Promesas.
 
 - Async Await.
 
-## Que Son las promesas en JS?
+## ¿Qué son las promesas en JS?
 
-Las promesas son un concepto un JS para resolver el problema de asincronía esto es mejor que usar calbacks
+Las promesas son un concepto de JS para resolver el problema de asincronía, esto es mejor que usar calbacks
 
-Las promesas es algo que pensamos que se cumplira
+Las promesas son algo que pensamos que se cumplirá.
 
-**Tiene 3 estados**
+** Las promesas tienen 3 estados. **
 
 - La promesa se cumple (promesa resuelta)
 - La promesa no se cumple (promesa rechazada)
-- La promesa se queda pendiente esperando
+- La promesa se queda pendiente, esperando.
 
-Para usar las promesas tenemos estos metodos
+Para usar las promesas tenemos estos métodos.
 
 - **.then(resolve)** Ejecuta la función callback resolve cuando la promesa se cumple.
 
 - **.then(reject)** Ejecuta la función callback resolve cuando la promesa se rechaza.
 
-La forma de consumir una promesa es utilizando el .then()
+La forma de consumir una promesa es utilizando .then()
 
 ## async await
 
-Con async/await seguimos manejando promesas, sin embargo, hay ciertos cambios importantes:
+Con async/await seguimos manejando promesas; sin embargo, hay ciertos cambios importantes.
 
 - No encadenamos mediante .then(), sino que usamos un sistema más tradicional.
-- Abandonamos el modelo no bloqueante y pasamos a uno bloqueante.
+- Abandonamos el modelo no bloqueante y pasamos a un modelo bloqueante.
 
 ### Await
 
-En cualquier promesa que tengamos usaremos la palabra clave await antes
+En cualquier promesa que tengamos usaremos la palabra clave await antes, como vemos en el ejemplo de abajo.
 
 ```js
 const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=721");
 console.log(response);
 ```
 
-En este ejemplo nuestra promesa es response
+En este ejemplo, nuestra promesa es response
 
 > Lo que hace await es detener la ejecución del programa y no continuar. Se espera a que se resuelva la promesa, y hasta que no lo haga, no continua. A diferencia del .then(), aquí tenemos un código bloqueante
 
-**Vamos a meterlo dentro de una funcion**
+**Vamos a meterlo dentro de una función.**
 
 ```js
 const callApi =  () => {
@@ -114,21 +114,21 @@ const callApi =  () => {
 
 ```
 
-Sin embargo, aquí tenemos un problema. Estamos utilizando await (asíncrono) dentro de request() (síncrono), por lo que antes de ejecutarla da este error
+Sin embargo, aquí tenemos un problema. Estamos utilizando await (asíncrono) dentro de una función callAPI() (síncrona), por lo que antes de ejecutarla da este error.
 
 > Uncaught SyntaxError: await is only valid in async functions and the top level bodies of modules
 
-Para resolver el problema anterior y poder utilizar el await dentro de nuestra función, sólo tenemos que definir nuestra función como función asíncrona utilizando la palabra clave await:
+Para resolver el problema anterior y poder utilizar el await dentro de nuestra función, solo tenemos que definir nuestra función como función asíncrona utilizando la palabra clave await.
 
 > Inportante: No puede haber un async sin un await
 
-### LLamando a la PokeApi
+### Llamando a la PokeApi
 
-**Veamos un paso a paso**
+**Veamos un paso a paso.**
 
 > Inportante: El paso a paso no funciona si lo copias es simplemente para que veas como se hace luego al final dejare el codigo completo
 
-1. Creamos un HTML basico que tendra una seccion con la clase gallery y un script para realizar la logica de javascript.
+1. Creamos un HTML básico que tendrá una sección con la clase gallery y un script para realizar la lógica con JavaScript.
 
 ```html
 <!DOCTYPE html>
@@ -146,9 +146,9 @@ Para resolver el problema anterior y poder utilizar el await dentro de nuestra f
 </html>
 ```
 
-2. Definimos una función callApi() y le decimos que sea asincrona
+2. Definimos una función callApi() y le decimos que sea asíncrona.
 
-3. creamos una const response que hara una peticion http a la api por fetch y obtendra todos los datos de la API
+3. creamos una const response que hará una petición HTTP a la API por fetch y obtendrá todos los datos de la API.
 
 > Si no ponemos la palabra clave await en nuestra funcion asincrona saldra este error
 
@@ -157,11 +157,13 @@ Para resolver el problema anterior y poder utilizar el await dentro de nuestra f
 - [[PromiseState]]: "fulfilled"
 - [[PromiseResult]]: Object
 
-4.  > Importante a la Url que hacemos fetch podemos decirle cuantos pokemon queremos con el parametro limmit = 151 en este caso sacara los primeros 151 pokemos
+> Sin la palabra clave await nuestra promesa no se resolverá, quedará como pendiente esperando a que se resuelva esta parte. La vimos en las promesas.
 
-5.  Sacamos la respuesta de la API por consola
+4.  > Importante: a la URL que hacemos fetch podemos decirle cuantos Pokémon queremos con el parámetro limmit = 151. En este caso sacará los primeros 151 Pokémon.
 
-6.  Llamamos a la funcion para que se ejecute y nos devuelva la respuesta de la API por consola
+5.  Sacamos la respuesta de la API por consola.
+
+6.  Llamamos a la función para que se ejecute y nos devuelva la respuesta de la API por consola.
 
 ```js
 const callApi = async () => {
@@ -169,19 +171,19 @@ const callApi = async () => {
 	console.log(response);
 };
 
-callApi(); // Lamada a la funcion CallApi
+callApi(); // Llamamos a la funcion
 
 // Este ejemplo de codigo son los pasos del 2 al 6
 ```
 
-#### Esto es lo que optenemos por consola
+#### Esto es lo que obtenemos por consola.
 
 ![console.log respuesta](/public/api_img/consoleLogRespuesta.png)
 
-Nos devuelve cosas interesantes como porejemplo la URL si has sido redirijido
-y el codigo de estado en este caso da 200 quiere decir que ha salido todo bien
+Nos devuelve cosas interesantes, como, por ejemplo, la URL si has sido redirigido.
+El código de estado, en este caso da 200, quiere decir que ha salido todo bien.
 
-5. Podemos usar try y catch para depurar errores simplemente al codigo que tenemos le añadimos los bloques try catch
+5. Podemos usar try y catch para depurar errores simplemente. Al código que tenemos, le añadimos los bloques try catch.
 
 ```js
 const callApi = async () => {
@@ -190,7 +192,7 @@ const callApi = async () => {
 		const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=721");
 		console.log(response);
 
-		// Captura el error del try si ocurre uno y imprime el error por consola
+		// Captura el error del try con el parametro error si ocurre uno y imprime el error por consola
 	} catch (error) {
 		console.log(error);
 	}
@@ -199,11 +201,11 @@ const callApi = async () => {
 callApi(); // llamando a la funcion CallApi
 ```
 
-6. Ahora tenemos que tranformar nuestra respuesta en formato .JSON para poder acceder a los datos que estan en la respuesta y poder verlos por consola, para pintar pokemons Ahora mismo Tenemos unicamente la respuesta pero no la transformamos a formato JSON.
+6. Ahora tenemos que transformar nuestra respuesta en formato .JSON para poder acceder a los datos que están en la respuesta y poder verlos por consola, para pintar pokemons Ahora mismo tenemos únicamente la respuesta, pero no tenemos el JSON.
 
 ![console.log respuesta](/public/api_img/consoleLogRespuesta.png)
 
-**Transformemos la respuesta a formato .JSON para pintar pokemon por consola veamos como se hace.**
+**Transformemos la respuesta al formato .JSON para pintar Pokémon por consola. Veamos cómo se hace.**
 
 ```js
 const callApi = async () => {
@@ -225,18 +227,20 @@ const callApi = async () => {
 callApi(); // LLama a la funcion
 ```
 
-> Importante la constante data convierte la respuesta en formato json.
+> Importante el metodo .json() convierte la respuesta de la variable data a formato json.
 
-> la constante data es toda la informacion de la api pero tranformada en formato JSON
+> la constante data es toda la informacion de la API pero tranformada en formato JSON.
 
 > Inportante en la constante data debemos poner la palabra clave **await Porque recordemos que nuestra funcion es (async asincrona) y no puede haber un async sin un await todas las constantes que definamos en esta funcion callAPI llevaran la palabra clave await por lo que comentamos antes** porque todo lo que reciba de la API puede tardar un tiempo por mi conexion a internet una pigina lenta ect..
 
-**Si no hacemos esto nos saldra el siguente error**
+**Si no hacemos esto, nos saldrá el siguiente error.**
 
 TypeError: Cannot read properties of undefined (reading 'map')
 at callApi (api.js:66:22)
 
-Si ejecutamos este console.log **console.log(data.results[3])** Nos imprimira por pantalla el 4 elemento del objeto que es charmander accediendo a la constante data que tiene la informacón de la API en formato json y al resultado de esa respuesta que contiene charmander se accede con **data.results[3])**
+si ejecutamos el siguiente código: **console.log(data.results[3])**; el resultado será el cuarto elemento del array dentro del objeto.data En este caso, imprimirá "Charmander".
+
+Esto ocurre porque estamos accediendo a la constante data, que contiene la información obtenida de la API en formato JSON. Dentro de esa estructura, hay una propiedad llamada results, que es un array con diferentes elementos. Usando data.results[3], estamos seleccionando el cuarto elemento de ese array, que corresponde a "Charmander".
 
 ```js
 console.log(data.results[3]); // Imprime charmander
@@ -264,24 +268,24 @@ const callApi = async () => {
 callApi(); // LLama a la funcion callApi
 ```
 
-Este codigo nos saca todos los pokemon de la constante data que son 721 pokemon
+Este código nos saca todos los Pokémon de la constante data que son 721 Pokémon.
 
-![data Api all pokemon](/public/api_img/data_api.png)
+![data API all Pokémon](/public/api_img/data_api.png)
 
-**Que nos devuelve la API?**
+**¿Qué nos devuelve la API?**
 
-- Cuantos elementos tiene el array 1302
-- Como limimitamos el array solo nos devolvera 721 elementos
-- nos devuelve el nombre del pokemon
-- la url asociada a cada pokemon cada pokemon es un objeto
+- Cuántos elementos tiene el array 1302.
+- Como limitamos el array solo nos devolverá 721 elementos.
+- Nos devuelve el nombre de cada Pokémon.
+- La URL asociada a cada Pokémon: cada Pokémon.
 
-7. Ahora debemos de obtener los resultados dentro de data que es el json pero como lo hacemos existe un metodo que se llama **map()**
+7. Ahora debemos de recorrer los resultados dentro de data que es el JSON, pero como lo hacemos, existe un método que se llama **map()**
 
-Los tipos de dato Map son muy similares a los Objetos de Javascript, ya que estos últimos se pueden usar como estructuras de diccionario mediante pares clave-valor. Sin embargo, los Object tienen algunas diferencias y puedeb recorrer objetos
+Los tipos de dato Map son muy similares a los Objetos de JavaScript, ya que estos últimos se pueden usar como estructuras de diccionario mediante pares clave-valor. Sin embargo, los Object tienen algunas diferencias y pueden recorrer objetos.
 
-Las diferencias no las explicare ahora sera en la parte de estructuras de control pero quedarse con que es similar a un objeto
+Las diferencias no las explicaré, ahora será en la parte de estructuras de control, pero quedarse con que es similar a un objeto.
 
-**Vemamos el ejemplo del map() solo nos enfocaremos en la parte del map().**
+**Veamos el ejemplo del map(). Solo nos enfocaremos en la parte del map().**
 
 ```js
 const callApi = async () => {
@@ -313,9 +317,9 @@ const callApi = async () => {
 };
 ```
 
-**Veamos paso a paso lo que hay dentro del metodo map()**
+**Veamos paso a paso lo que hay dentro del método map()**
 
-1. primero realizamos un map de los resultados del json de data y hacemos una funcion flecha con el parametro pokemon que sera cada uno de los pokemon
+1. primero realizamos un map de los resultados del JSON de data y hacemos una función flecha con el parámetro Pokémon que será cada uno de los Pokémon que recorrerá el map().
 
 ```js
 data.results.map((pokemon) => {
@@ -323,11 +327,11 @@ data.results.map((pokemon) => {
 });
 ```
 
-2. Selecionamos muestro elemnto de HTML section con el metodo del dom **document.querySelector()**
+2. Seleccionamos nuestro elemento de HTML sección con el método del DOM**document.querySelector()**
 
-3. Tenemos que crear 2 elemntos por javascript que recorran el metodo map() este metodo tiene los resultados del JSON gracias a la variable Response los elementos que crearemos seran un articulo que sera cada carta de pokemon y un titulo con el nombre del pokemon para crear un elemento tenemos este metodo **document.createElement("elemento a crear")** como es un map creara tantos elementos como haya en **data.results**
+3. Tenemos que crear 2 elementos por JavaScript que recorran el método map() este método tiene los resultados del JSON gracias a la variable data los elementos que crearemos serán un artículo que será cada carta de Pokémon y un título con el nombre del Pokémon para crear un elemento tenemos este método **document.createElement("elemento a crear")** como es un map creará tantos elementos como haya en **data.results**
 
-**Veamos un ejemplo creando estos 2 elementos**
+**Veamos un ejemplo creando estos 2 elementos.**
 
 ```js
 const callApi = async () => {
@@ -358,24 +362,36 @@ callApi();
 
 ![creando elementos en el DOM](/public/api_img/createElements.png)
 
-Como podemos observar en la imagen nos crea los elementos article y h2 por cada elemento del metodo map() que recorre un objeto
+Como podemos observar en la imagen, nos crean los elementos article y h2 por cada elemento del método map() que recorre un objeto.
 
-Pero como sacamos el nombre del pokemon por consola y la url fuera del array de results
+Importante: no podemos recorrer Pokémon con el buche foreach. Por esta razón foreach no recorre las estructuras de tipo mapa, es decir, las estructuras tipo clave:valor.
+
+#### Por ejemplo:
+
+```js
+// Esto se puede recorrer con un map pero no con foreach
+const pokemons = {
+	name: "bulbasur",
+};
+console.log(pokemons.name);
+```
+
+Pero, ¿cómo sacamos el nombre del Pokémon por consola y la URL fuera del array de results?
 
 ```js
 const pokemonInformation = console.log(pokemon.name, pokemon.url);
 // añadimos esta linea a lo que ya teniamos en el ejemplo anterior
 ```
 
-##### Pero como se a que propiedad tengo que acceder?
+##### ¿Pero cómo sé a qué propiedad tengo que acceder?
 
-Es muy sencillo la variable data nos da toda la API en formato JSON esta API
-tiene una propiedad llamada results que nos dara todos los resultados de la API
-accedemos a ella poniedo un punto y luego hacemos un map de pokemon ,pokemon sera cada uno de los elementos del array de results como comentamos antes.
+Para acceder a la información específica dentro de la respuesta de la API, debemos entender la estructura del objeto JSON que obtenemos. En nuestro caso, data es el objeto que contiene toda la información de la API en formato JSON.
 
-Entonces para acceder al nombre del pokemon debemos de poner **pokemon.name**
+    Propiedad results: Dentro de data, encontramos una propiedad llamada results. Esta propiedad es un array que contiene objetos, donde cada objeto representa un Pokémon.
 
-y nos sacara el nombre del pokemon de cada elemento del array si queremos tener la URL hariamos esto **pokemon.url**
+    Acceso a propiedades de los objetos: Cada objeto en el array results tiene varias propiedades. Por ejemplo:
+        Nombre del Pokémon: Para acceder al nombre de cada Pokémon, utilizamos pokemon.name, donde Pokémon representa cada objeto del array.
+        URL del Pokémon: Para obtener la URL asociada a cada Pokémon, usamos pokemon.url
 
 ![acceder al nombre y a la url ](/public/api_img/name_url.png)
 
@@ -407,13 +423,13 @@ callApi();
 
 #### Resultado
 
-![sacar nombre y url por consola fuera del objeto](/public/api_img/conseguir_url_nombre.png)
+![sacar nombre y URL por consola fuera del objeto.](/public/api_img/conseguir_url_nombre.png)
 
 ### Añadir elementos al dom
 
-Para esta parte final de javascript quitemos todos los console.log porque no nos haran falta simplemente eso era para depurar
+Para esta parte final de JavaScript quitemos todos los console.log porque no nos harán falta, simplemente eso era para depurar el código.
 
-tenemos que añadir estas 3 nuevas lineas a nuestro codigo de JS que explicaremos ahora.
+Tenemos que añadir estas 3 nuevas líneas a nuestro código de JS que explicaremos ahora.
 
 ```js
 h2.textContent = pokemon.name;
@@ -421,15 +437,17 @@ section.appendChild(article);
 article.appendChild(h2);
 ```
 
-1. La primera linea **h2.textContent = pokemon.name;** en el elemento **h2** que creamos previamente hacedemos a su propiedad **textContent** y le decimos que sera igual al nombre del pokemon que hace textContent? simplemente añade texto por ejemplo el primer pokemon sera bulbasur pero aun no sale nada por pantalla porque no lo hemos añadido a ninguna etiqueta.
+    h2.textContent = pokemon.name;: En esta línea, estamos usando  la propiedad textContent del elemento h2 que creamos previamente con CreateElement. La propiedad textContent se utiliza para establecer el texto que se mostrará dentro del elemento HTML. Al asignar pokemon.name a textContent, estamos insertando el nombre del Pokémon en el elemento h2. Por ejemplo, si el nombre del primer Pokémon es "Bulbasaur", se mostrará "Bulbasaur" dentro del elemento.h2 Aunque aún no veremos el nombre en la página, porque el elemento h2 no ha sido agregado al DOM.
 
-2. **section.appendChild(article);** appendChild inserta un elemento html desde javascript como hijo section.appendChild(article) en este ejemplo dentro de section habra un article
+2. **section.appendChild(article);** appendChild inserta un elemento HTML desde JavaScript como hijo section.appendChild(article). En este ejemplo, dentro de sección habrá un article
 
-3. En la tercera linea es igual pero dentro del article habra un h2
+3. En la tercera línea es igual, pero dentro del article habrá un h2
 
-Hemos acabado ahora añadiremos un poco de html css y javascript para ver el codigo completo y ver el resultado final.
+> Nota appendChild inserta el elemento en el DOM
 
-### Codigo completo
+Hemos acabado, ahora añadiremos un poco de HTML, CSS y JavaScript para ver el código completo y ver el resultado final.
+
+### Código completo
 
 ```html
 <!DOCTYPE html>
@@ -560,6 +578,6 @@ callApi();
 
 ### Conclusiones
 
-ahora ya sabes como llamar a una API y obtener informacion de ella gracias a la asincronia has aprendido a usar fetch y ya sabes como funciona async await
+Ahora ya sabes cómo llamar a una API y obtener información de ella gracias a la asincronía. Has aprendido a usar fetch y ya sabes cómo funciona async await. También sabes qué es una promesa y cómo funciona.
 
 > Nota esta documentación ira aumentando por ejemplo sacaremos las imagenes de los pokemon ect
