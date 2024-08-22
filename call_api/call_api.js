@@ -27,14 +27,24 @@ const callApi = async () => {
             const section = document.querySelector("section")
             const article = document.createElement("article")
             const  h2 = document.createElement("h2")
-             const pokemonInformation = console.log(pokemon.name,pokemon.url)
-             
+            const span = document.createElement("span")
+            const pokemonInformation = console.log(pokemon.name,pokemon.url)
+
+            /* Intentar entender esta parte
+            const numberPokemon = pokemon.url.split("/").filter(Boolean).pop();
+            */ 
+            const numberPokemon = pokemon.url.split("/").filter(Boolean).pop();
+            const pokemonId = `#${numberPokemon} `;
+
              h2.textContent = (pokemon.name)
              section.appendChild(article)
              article.appendChild(h2)
+             article.appendChild(span)
+             span.textContent = (pokemonId)
              console.log(pokemonInformation)
         })
 
+        console.log(data.results)
         // Captura el error del try si ocurre uno y imprime el error por consola
 
     } catch (error) {

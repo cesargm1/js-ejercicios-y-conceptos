@@ -28,3 +28,8 @@ h2{
     width: 100%;
     text-align: center;
 }
+
+span{
+    color: white;
+    text-shadow: 1px 2px 2px rgb(255, 245, 245);
+}
