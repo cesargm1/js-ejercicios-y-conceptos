@@ -7,7 +7,7 @@ const callApi = async () => {
         // hace una peticion http con fetch 
         
         // Importante a la Url que hacemos fetch podemos decirle cuantos pokemon queremos con el parametro limmit = 151 en este caso sacara los primeros 151 pokemos
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=721')
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
         console.log(response)
 
         // Me saca la respuesta en formato json con  const data = await response.json()
@@ -28,7 +28,9 @@ const callApi = async () => {
             const article = document.createElement("article")
             const  h2 = document.createElement("h2")
             const span = document.createElement("span")
-            const pokemonInformation = console.log(pokemon.name,pokemon.url)
+            const img = document.createElement("img")
+
+            console.log(pokemon.name,pokemon.url)
 
             /* Intentar entender esta parte
             const numberPokemon = pokemon.url.split("/").filter(Boolean).pop();
@@ -36,13 +38,17 @@ const callApi = async () => {
             const numberPokemon = pokemon.url.split("/").filter(Boolean).pop();
             const pokemonId = `#${numberPokemon} `;
 
+            // En el elemento imagen accedemos  a la propiedad src y interpolamos la URL con el nombre de cada pokemon de este modo obtenemos la imagen de cada pokemon 
+            img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${numberPokemon}.png`
+
              h2.textContent = (pokemon.name)
              section.appendChild(article)
              article.appendChild(h2)
              article.appendChild(span)
+             article.appendChild(img)
              span.textContent = (pokemonId)
-             console.log(pokemonInformation)
         })
+
 
         console.log(data.results)
         // Captura el error del try si ocurre uno y imprime el error por consola

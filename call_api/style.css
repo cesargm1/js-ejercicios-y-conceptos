@@ -22,6 +22,7 @@ article{
      background: linear-gradient(114deg, #42b1c8,#9d8dcf,#13132a);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
     padding: 1em;
     display: flex;
+    gap: 1em;
 }
 
 h2{
