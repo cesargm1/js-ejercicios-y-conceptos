@@ -33,7 +33,7 @@ const callApi = async () => {
             console.log(pokemon.name,pokemon.url)
 
             /* Intentar entender esta parte
-            const numberPokemon = pokemon.url.split("/").filter(Boolean).pop();
+           filtra todos los valores que tengan contenido true si no tiene contenido sera false mejorar esta parte
             */ 
             const numberPokemon = pokemon.url.split("/").filter(Boolean).pop();
             const pokemonId = `#${numberPokemon} `;
