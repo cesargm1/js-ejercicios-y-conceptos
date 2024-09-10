@@ -5,13 +5,13 @@ const lastName = "veider";
 
 const fullName = Name + lastName;
 
-// console.log(fullName);
+//console.log(fullName);
 
 // 2. Muestra la longitud de una cadena de texto
 
 const string = "hola soy tu padre";
 
-// console.log(string.length); // con el metodo length sacamos la longitud de la cadena empezando por el indice [0] el indice se genera en todo lo que cremos en javascript automaticamente
+//console.log(string.length); // con el metodo length sacamos la longitud de la cadena empezando por el indice [0] el indice se genera en todo lo que cremos en javascript automaticamente
 
 // 3. Muestra el primer y último carácter de un string
 
@@ -20,7 +20,6 @@ const cadena = "juan pedro";
 const character = cadena[0];
 
 const lastCharacter = cadena[cadena.length - 1];
-
 /*
 console.log(
 	`Estos son el primer y ultimo caracter ${character} ${lastCharacter}`
@@ -33,10 +32,10 @@ let animal = "pig";
 
 let animalUpercase = animal.toUpperCase();
 
-let animalLowerCase = animal.toLocaleLowerCase();
+let animalLowerCase = animal.toLowerCase();
 
-// console.log(animalLowerCase);
-// console.log(animalUpercase);
+// console.log(animalLowerCase); // metodo que convierte a minisculas
+// console.log(animalUpercase); // metodo que convierte a mayusculas
 
 // 5. Crea una cadena de texto en varias líneas
 
@@ -71,22 +70,22 @@ let find = "la ardilla come bellotas";
 let text1 = "adios";
 let text2 = "adios";
 
-// let result2 = text1.localeCompare(text2);
+let result2 = text1.localeCompare(text2);
 
-// console.log(result2);
+console.log(result2);
 
 // 0 verdaredo
 // -1 falso
 
 // 10. Comprueba si dos strings tienen la misma longitud
 
-let cadena1 = "hola que tal";
+// let cadena1 = "hola que tal";
 
-let cadena2 = "hola que tal";
+// let cadena2 = "hola que tal";
 
-let resultado =
-	cadena1.length === cadena2.length
-		? "la cadena es igual"
-		: "la cadena no es igual";
+// let resultado =
+// 	cadena1.length === cadena2.length
+// 		? "la cadena es igual"
+// 		: "la cadena no es igual";
 
-console.log(resultado);
+// console.log(resultado);
