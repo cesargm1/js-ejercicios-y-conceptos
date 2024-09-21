@@ -22,7 +22,7 @@ console.log("3"); // Este console log se ejecuta el ultimo
 
 ### Resultado
 
-![Código síncrono.](/public/api_img/codigo-sincrono.png)
+![Código síncrono.](/advanced/call_api/public/api_img/codigo-sincrono.png)
 
 Pero llegará un momento en nuestra aplicación que queramos ejecutar tareas **asíncronas** donde tenemos que **esperar a que ocurra un suceso** como por ejemplo un click una llamada a una API que no depende de nosotros y luego cuando ocurra ese suceso realizar uma acción concreta por ejemplo hacer un fetch a una URL.
 
@@ -178,7 +178,7 @@ callApi(); // Llamamos a la funcion
 
 #### Esto es lo que obtenemos por consola.
 
-![console.log respuesta](/public/api_img/consoleLogRespuesta.png)
+![console.log respuesta](/advanced/call_api/public/api_img/consoleLogRespuesta.png)
 
 Nos devuelve cosas interesantes, como, por ejemplo, la URL si has sido redirigido.
 El código de estado, en este caso da 200, quiere decir que ha salido todo bien.
@@ -203,7 +203,7 @@ callApi(); // llamando a la funcion CallApi
 
 6. Ahora tenemos que transformar nuestra respuesta en formato .JSON para poder acceder a los datos que están en la respuesta y poder verlos por consola, para pintar pokemons Ahora mismo tenemos únicamente la respuesta, pero no tenemos el JSON.
 
-![console.log respuesta](/public/api_img/consoleLogRespuesta.png)
+![console.log respuesta](/advanced/call_api/public/api_img/consoleLogRespuesta.png)
 
 **Transformemos la respuesta al formato .JSON para pintar Pokémon por consola. Veamos cómo se hace.**
 
@@ -270,7 +270,7 @@ callApi(); // LLama a la funcion callApi
 
 Este código nos saca todos los Pokémon de la constante data que son 721 Pokémon.
 
-![data API all Pokémon](/public/api_img/data_api.png)
+![data API all Pokémon](/advanced/call_api/public/api_img/data_api.png)
 
 **¿Qué nos devuelve la API?**
 
@@ -360,7 +360,7 @@ callApi();
 
 ### Resultado
 
-![creando elementos en el DOM](/public/api_img/createElements.png)
+![creando elementos en el DOM](/advanced/call_api/public/api_img/createElements.png)
 
 Como podemos observar en la imagen, nos crean los elementos article y h2 por cada elemento del método map() que recorre un objeto.
 
@@ -393,7 +393,7 @@ Para acceder a la información específica dentro de la respuesta de la API, deb
         Nombre del Pokémon: Para acceder al nombre de cada Pokémon, utilizamos pokemon.name, donde Pokémon representa cada objeto del array.
         URL del Pokémon: Para obtener la URL asociada a cada Pokémon, usamos pokemon.url
 
-![acceder al nombre y a la url ](/public/api_img/name_url.png)
+![acceder al nombre y a la url ](/advanced/call_api/public/api_img/name_url.png)
 
 ```js
 const callApi = async () => {
@@ -423,7 +423,7 @@ callApi();
 
 #### Resultado
 
-![sacar nombre y URL por consola fuera del objeto.](/public/api_img/conseguir_url_nombre.png)
+![sacar nombre y URL por consola fuera del objeto.](/advanced/call_api/public/api_img/conseguir_url_nombre.png)
 
 ### Añadir elementos al dom
 
@@ -574,7 +574,7 @@ callApi();
 
 #### Resultado
 
-![Poke Api](/public/api_img/pokemon.png)
+![Poke Api](/advanced/call_api/public/api_img/pokemon.png)
 
 ### Conclusiones
 

@@ -45,7 +45,7 @@ Un <p>, que contiene el texto del artículo.`
 
 ### Veamos este ejemplo de forma mas grafica
 
-![dom tree](/public/dom/img/dom_tree.png)
+![dom tree](/basic/dom/public/dom_img/dom_tree.png)
 
 En javascript cuando hablamos de DOM nos referimos a esta estrictura de arbol.
 
@@ -176,7 +176,7 @@ console.log(element);
 
 ### Resultado
 
-![getElementById](/public/dom/img/getElementById.png)
+![getElementById](/basic/dom/public/dom_img/getElementById.png)
 
 Como podemos observar en la imagen de abajo sale nuestro elemento **h1** por consola
 
@@ -244,7 +244,7 @@ Aqui lo unico que hemos cambiado a sido el metodo del DOM que ahora es **getElem
 
 #### Resultado
 
-![getElementByClassName](/public/dom/img/getElementByClassName.png)
+![getElementByClassName](/basic/dom/public/dom_img/getElementByClassName.png)
 
 Al final como podemos ver en la imagen devuelve un array con todos los elementos que tengan la clase **section\_\_paragraf** y hasta nos debuelve su tamaño
 
@@ -258,7 +258,7 @@ console.log(element[0]);
 
 En este ejemplo cogemos el primer elemnento del array
 
-![getElementByClassName one](/public/dom/img/getElementByClassNameOne.png)
+![getElementByClassName one](/basic/dom/public/dom_img/getElementByClassNameOne.png)
 
 ### getElementsByTagName(tag)
 
@@ -318,7 +318,7 @@ console.log(element);
 
 El metodo **getElementsByTagName('etiqueta')** devuelve un array con las etiquetas que coincidan
 
-![getElementsByTagName](/public/dom/img/getElementByTagName.png)
+![getElementsByTagName](/basic/dom/public/dom_img/getElementByTagName.png)
 
 Como podemos ver en este ejemplo nos devuelve un array con las etiquetas que indiquemos
 
@@ -342,7 +342,7 @@ Nos devuelve el primer un elemento que coincide con ese selector si no existe de
 
 #### Resultado
 
-![querySelector](/public/dom/img/querySelector.png)
+![querySelector](/basic/dom/public/dom_img/querySelector.png)
 
 Como vemos nos devuelve el primer elemento que coincide con el selector
 
@@ -363,7 +363,7 @@ podemos coger etiquetas clases id selectores css tanto en **querySelector()** co
 
 #### Resultado
 
-![querySelectorAll](/public/dom/img/querySelectorAll.png)
+![querySelectorAll](/basic/dom/public/dom_img/querySelectorAll.png)
 
 En todos los ejemplos usamos este codigo **HTML**.
 
