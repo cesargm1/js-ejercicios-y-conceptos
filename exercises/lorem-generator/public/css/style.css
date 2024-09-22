@@ -1,0 +1,22 @@
+.h1 {
+  color: rgb(101, 101, 216);
+  text-align: center;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  gap: 0 1em;
+}
+.section__label {
+  text-transform: uppercase;
+}
+.section__label__input {
+  max-width: 50px;
+  width: 100%;
+}
+.section__button {
+  color: rgb(129, 129, 204);
+}
+
+/*# sourceMappingURL=style.css.map */
