@@ -1,0 +1,30 @@
+.h1 {
+  color: aquamarine;
+}
+
+.section {
+  display: flex;
+  gap: 1em;
+}
+.section .button {
+  padding: 1em;
+  color: white;
+  cursor: pointer;
+}
+.section .button--green {
+  border: solid 2px green;
+  background-color: rgb(40, 161, 40);
+}
+.section .button--black {
+  border: solid 2px black;
+  background-color: rgb(32, 34, 32);
+}
+.section .button--reset {
+  color: black;
+}
+.section .button--random {
+  border: solid 2px black;
+  background-color: rgb(32, 34, 32);
+}
+
+/*# sourceMappingURL=style.css.map */

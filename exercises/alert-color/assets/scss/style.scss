@@ -1,0 +1,33 @@
+.h1{
+    color: aquamarine;
+}
+
+.section{
+    display: flex;
+    gap: 1em;
+
+    .button{
+        padding: 1em;
+        color: white;
+        cursor: pointer;
+    }
+
+    .button--green{
+        border: solid 2px green;
+        background-color: rgb(40, 161, 40);
+    }
+
+    .button--black{
+        border: solid 2px black;
+        background-color: rgb(32, 34, 32);
+    }
+
+    .button--reset{
+       color: black;
+    }
+
+    .button--random{
+        border: solid 2px black;
+        background-color: rgb(32, 34, 32);
+    }
+}
